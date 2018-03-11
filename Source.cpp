@@ -1,23 +1,19 @@
-#include <list>
-#include <iostream>
+#include <list>  
+#include <iostream>  
 using namespace std;
-typedef list<int> List;
-int main()
-{
-	List a;
+int main() {
 	int n;
 	cin >> n;
-	for (int i = 0; i<n; i++)
-		a.push_back(rand() % 20);
+	list <int> a;
+	cout << "size at first: " << a.size() << endl;
+	for (int i = 0; i < n; i++)
+	{
+		a.push_back(rand() % 10);
+	}
 	
-	List::iterator i = a.begin();
-	List::reverse_iterator j = a.rbegin();
-
-	for (i, j; i != a.end(), j != a.rend(); ++i, ++j)
-		if (!a.empty())
-			cout << *i << " " << *j <<" ";
-
-	cout << endl;
+	cout << "size at middle: " << a.size() << endl;
+	a.clear();
+	cout << "size at the end: " << a.size() << endl;
 	system("pause");
 	return 0;
 }
